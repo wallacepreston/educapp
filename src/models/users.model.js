@@ -12,10 +12,6 @@ class users extends Model {
     return {
       type: 'object',
       required: ['firstName', 'lastName', 'email'],
-      // allowedEager: ['instructor', 'students'],
-      properties: {
-        text: { type: 'string' }
-      }
     };
   }
 
@@ -62,6 +58,9 @@ module.exports = function (app) {
         table.string('address');
         table.string('phone');
         table.string('email');
+        table.integer('instructorId');
+        table.integer('guardianId');
+        table.boolean('isAdmin');
         table.timestamp('createdAt');
         table.timestamp('updatedAt');
       })

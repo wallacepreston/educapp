@@ -14,7 +14,9 @@ module.exports = function (app) {
 
   // Initialize our service with any options it requires
   const usersService = createService(options);
-  console.log(usersService);
+  usersService.find = async () => {
+    return await Model.query().eager('[students,instructor]');
+  };
   app.use('/users', usersService);
 
   // Get our initialized service so that we can register hooks and filters
