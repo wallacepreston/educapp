@@ -1,23 +1,21 @@
 // Initializes the `users` service on path `/users`
 const createService = require('feathers-objection');
-const createModel = require('../../models/users.model');
+// const createModel = require('../../models/users.model');
 const hooks = require('./users.hooks');
+const User = require('../../models/users.model');
 
 module.exports = function (app) {
-  const Model = createModel(app);
   const paginate = app.get('paginate');
 
   const options = {
-    model: Model,
-    paginate
+    model: User,
+    paginate,
+    whitelist: ['$eager', '$joinRelation'],
+    allowedEager: '[students,instructor]',
   };
 
   // Initialize our service with any options it requires
-  const usersService = createService(options);
-  usersService.find = async () => {
-    return await Model.query().eager('[students,instructor]');
-  };
-  app.use('/users', usersService);
+  app.use('/users', createService(options));
 
   // Get our initialized service so that we can register hooks and filters
   const service = app.service('users');
