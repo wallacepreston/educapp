@@ -28,4 +28,4 @@ class Invoice extends Model {
   }
 }
 
-module.exports = Invoice;
+module.exports = Invoice; 
