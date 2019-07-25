@@ -9,7 +9,7 @@ module.exports = function (app) {
     model: Session,
     paginate: app.get('paginate'),
     whitelist: ['$eager', '$joinRelation'],
-    allowedEager: '[student,instructor]',
+    allowedEager: '[students,instructor]',
   };
 
   // Initialize our service with any options it requires

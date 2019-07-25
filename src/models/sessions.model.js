@@ -28,7 +28,7 @@ class Session extends Model {
           to: 'users.id'
         }
       },
-      student: {
+      students: {
         relation: Model.HasManyRelation,
         modelClass: User,
         join: {

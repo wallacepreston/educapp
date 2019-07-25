@@ -8,7 +8,9 @@ module.exports = function (app) {
 
   const options = {
     model: Invoice,
-    paginate
+    paginate,
+    whitelist: ['$eager', '$joinRelation'],
+    allowedEager: '[students,instructor,session]',
   };
 
   // Initialize our service with any options it requires

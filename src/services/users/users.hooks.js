@@ -2,8 +2,8 @@ const { eager } = require('../util.js');
 
 module.exports = {
   before: {
-    all: [],
-    find: [eager('[students,instructor]')],
+    all: [eager('[students,instructor]')],
+    find: [],
     get: [],
     create: [],
     update: [],

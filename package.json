@@ -28,7 +28,9 @@
     "dev": "nodemon src/",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit",
-    "seed": "node src/seed.js"
+    "seed": "node src/seed.js",
+    "migrate": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.6",
@@ -38,6 +40,7 @@
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "feathers-objection": "^2.0.1",
+    "glob": "^7.1.4",
     "helmet": "^3.18.0",
     "knex": "^0.18.2",
     "objection": "^1.6.9",
