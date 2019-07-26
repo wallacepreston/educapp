@@ -27,7 +27,7 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "dev": "nodemon src/",
     "start": "node src/",
-    "heroku-postinstall": "npm run seed",
+    "heroku-postinstall": "npm run migrate && npm run seed",
     "mocha": "mocha test/ --recursive --exit",
     "seed": "node src/seed.js",
     "migrate": "knex migrate:latest",

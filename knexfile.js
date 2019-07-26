@@ -1,10 +1,10 @@
 const pkg = require('./package.json');
-
+console.log(process.env.DATABASE_URL)
 module.exports = {
   development: {
     client: 'pg',
     useNullAsDefault: true,
-    connection: {
+    connection: process.env.DATABASE_URL || {
       database: pkg.name,
     },
     migrations: {
