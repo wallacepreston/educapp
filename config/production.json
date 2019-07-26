@@ -1,4 +1,4 @@
 {
-  "host": "educapp-app.feathersjs.com",
+  "host": "educapp-api.herokuapp.com/",
   "port": "PORT"
 }
