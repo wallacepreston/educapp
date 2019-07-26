@@ -9,6 +9,7 @@ module.exports = function (app) {
   const options = {
     model: Invoice,
     paginate,
+    multi: true,
     whitelist: ['$eager', '$joinRelation'],
     allowedEager: '[students,instructor,session]',
   };
