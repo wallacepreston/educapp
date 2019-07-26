@@ -17,7 +17,7 @@ module.exports = {
   production: {
     client: 'pg',
     useNullAsDefault: true,
-    connection: {
+    connection: process.env.DATABASE_URL || {
       database: pkg.name,
     },
     migrations: {
