@@ -1,5 +1,4 @@
 const { Model } = require('objection');
-require('dotenv').config();
 
 module.exports = function (app) {
   const { client, connection } = app.get('postgres');
