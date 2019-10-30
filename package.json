@@ -44,7 +44,7 @@
     "feathers-objection": "^2.0.1",
     "glob": "^7.1.4",
     "helmet": "^3.18.0",
-    "knex": "^0.18.2",
+    "knex": "^0.19.5",
     "objection": "^1.6.9",
     "pg": "^7.11.0",
     "serve-favicon": "^2.5.0",
